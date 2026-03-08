@@ -6,21 +6,20 @@ k = 2
 
 def findLongestSubstring(givenString:str, k:int) ->int:
     start = 0; end = 0; n = len(givenString)
-    hashMap = {}
+    count = {}
     maxFreq = 0
     maxLen = 0
 
     while(end < n):
-        alreadyIncluded = givenString[end] in hashMap
-        if alreadyIncluded == False:
-            hashMap[givenString[end]] = 0
-        hashMap[givenString[end]] += 1
+        count[givenString[end]] = count.get(
+            givenString[end], 0
+            ) + 1
 
-        maxFreq = max(hashMap.values())
+        maxFreq = max(maxFreq, count[givenString[end]])
         changes = (end-start+1) - maxFreq
 
         if(changes > k):
-            hashMap[givenString[start]] -= 1
+            count[givenString[start]] -= 1
             start += 1
             end += 1
             continue

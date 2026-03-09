@@ -4,6 +4,11 @@ k = 5
  
 # count number of subarrays with sum k 
 
+# logic is - 
+# in an index  -> the prefix sum - k = sum of a subarry, if this sum exist in our hashmap, means after that subarray the remaining subarray sum is k
+# <-------->|<----->
+# prefixSum + k = total sum
+
 def countSubarrays(nums, k):
     prefixSum = []
     storage = set()

@@ -3,7 +3,9 @@
 The main hack is if you don't want duplicate just use loop not to come back because loop will make sure that you go forward only
 */
 (function getAllSubset() {
-    const nums: number[] = [1, 2, 2, 2, 3, 3];
+    // const nums: number[] = [1, 2, 2, 2, 3, 3];
+    // const nums: number[] = [1, 2, 2];
+    const nums: number[] = [0];
     const answer: number[][] = [];
 
     generateSubsetWithoutDuplicate(nums, 0, [], answer);
